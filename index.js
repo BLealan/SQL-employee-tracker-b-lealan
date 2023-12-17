@@ -1,8 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const questions = require("./lib/questions.js");
+const inquirerQuestions = require("./lib/questions.js");
+const questions = inquirerQuestions.questions;
+const userInput = inquirerQuestions.userInput;
 
 inquirer.prompt(questions)
 .then(data => {
-    console.log(data)
+    const nextQuestion = userInput(data)
 });
