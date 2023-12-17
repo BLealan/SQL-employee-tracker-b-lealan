@@ -18,3 +18,4 @@ Following the concept of modularization and separation of concern, the programme
 ## Sources
 - https://stackoverflow.com/questions/56412516/conditional-prompt-rendering-in-inquirer
 - https://www.npmjs.com/package/inquirer#question
+- https://stackoverflow.com/questions/16631064/declare-multiple-module-exports-in-node-js

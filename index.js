@@ -4,7 +4,12 @@ const inquirerQuestions = require("./lib/questions.js");
 const questions = inquirerQuestions.questions;
 const userInput = inquirerQuestions.userInput;
 
-inquirer.prompt(questions)
+const askQuestions = (data) => inquirer.prompt(questions)
 .then(data => {
     const nextQuestion = userInput(data)
-});
+})
+;
+
+askQuestions();
+//async await data answer
+//conditional if (data 1= "Exit"){inquirer.prompt(questions)}
