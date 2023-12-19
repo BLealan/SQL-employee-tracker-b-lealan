@@ -5,20 +5,18 @@ const questions = inquirerQuestions.questions;
 const userInput = inquirerQuestions.userInput;
 const mysql = require("mysql");
 
-const PORT = process.env.POR || 3001;
+const PORT = process.env.PORT || 3001;
 
 const askQuestions = (data) => inquirer.prompt(questions)
     .then(data => {
+        if(data.EXIT) {
+            return process.exit();
+        } else {
         const nextQuestion = userInput(data)
-    })
-    .then((data) => {
-        if (data === "Exit"){
-        process.exit();
-    } else {
-        inquirer.prompt(questions)
+        return userInput(data);
     }
 });
 
-askQuestions();
+askQuestions()
 //async await data answer
 //conditional if (data 1= "Exit"){inquirer.prompt(questions)}
