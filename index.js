@@ -7,28 +7,17 @@ const mysql = require("mysql");
 
 const PORT = process.env.POR || 3001;
 
-const db = mysql.createConnection(
-    {
-        host: "localhost",
-        user: "root",
-        password: "Primer-04",
-        database: "company_db"
-    },
-    console.log("Connected to company database.")
-);
-
 const askQuestions = (data) => inquirer.prompt(questions)
-.then(data => {
-    const nextQuestion = userInput(data)
-})
-.then((data) => {
-    if (data === "Exit"){
-    process.exit();
-} else {
-    inquirer.prompt(questions)
-}
-})
-;
+    .then(data => {
+        const nextQuestion = userInput(data)
+    })
+    .then((data) => {
+        if (data === "Exit"){
+        process.exit();
+    } else {
+        inquirer.prompt(questions)
+    }
+});
 
 askQuestions();
 //async await data answer
